@@ -1,5 +1,6 @@
 #---Client---
 # Logs
+hawk-client/package-lock.json
 hawk-client/logs
 hawk-client/*.log
 hawk-client/npm-debug.log*
@@ -28,3 +29,8 @@ hawk-client/*.sw?
 hawk-server/node_modules
 hawk-server/.env
 hawk-server/dist/
+hawk-server/package-lock.json
+
+#---Root---
+node_modules
+package-lock.json
