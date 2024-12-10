@@ -1,18 +1,27 @@
-# Hawk Blockchain Explorer
+# Hawk Crypto Wallet
 
-This is a full stack web app that was built using the MERN stack.
+This is a full-stack web app built using the MERN stack.
 
-These are the following functionalities:
+## Functionalities
 
-- Blockchain Data Retrieval
-  - Connect to bitcoin nodes.
-- Block Information
-  - View block details.
-- Transaction Information
-  - View transaction information.
-- Address Information
-  - View address information.
-- Search & Filtering
-- User Authentication
-  - Track wallet address and transaction history.
-  - User will need to create a account before they can use the explorer.
+### Blockchain Data Retrieval
+
+- Connect to Bitcoin nodes to synchronize wallet balances and transactions.
+
+### Wallet Management
+
+- Create and manage Bitcoin wallets.
+- Generate and display wallet addresses.
+
+### Transaction Management
+
+- View transaction history, including sent, received, and pending transactions.
+- Send Bitcoin to other wallet addresses with fee estimation.
+
+### Address Book
+
+- Save and manage frequently used Bitcoin addresses for quick access.
+
+### User Authentication
+
+- Users must create an account to secure and access their wallets.

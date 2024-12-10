@@ -8,3 +8,4 @@ export const connectToDatabase = async (uri: string) => {
         console.error(error);
     }
 };
+

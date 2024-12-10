@@ -27,7 +27,6 @@ hawk-client/*.sw?
 
 #---Server---
 hawk-server/node_modules
-hawk-server/.env
 hawk-server/dist/
 hawk-server/package-lock.json
 
