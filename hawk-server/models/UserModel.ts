@@ -4,8 +4,9 @@ import IUser from "../types/IUser";
 const userSchema: Schema<IUser> = new Schema({
   name: { type: String, required: true },
   password: { type: String, required: true },
-  username: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true },
+  walletAddress: { type: String, default: "" },
+  privateKey: { type: String, default: "" },
   createdAt: { type: Date, default: Date.now },
 });
 

@@ -1,8 +1,9 @@
 type IUser = {
     name: string;
     password: string;
-    username: string;
     email: string;
+    walletAddress: string;
+    privateKey: string;
     createdAt: Date;
 }
 

@@ -5,14 +5,12 @@ export type LoginInfo = {
 
 export type SendRegisterInfo = {
     name: string;
-    username: string;
     password: string;
     email: string;
 }
 
 export type RegisterInfo = {
     name: string;
-    username: string;
     password: string;
     repeatedPassword: string;
     email: string;

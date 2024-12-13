@@ -12,7 +12,6 @@ export default function Register() {
   const [loading, setLoading] = useState(false);
   const [userInfo, setUserInfo] = useState<RegisterInfo>({
     name: "",
-    username: "",
     password: "",
     repeatedPassword: "",
     email: "",
@@ -65,7 +64,6 @@ export default function Register() {
     }
     const result = await RegisterUser({
       name: userInfo.name,
-      username: userInfo.username,
       password: userInfo.password,
       email: userInfo.email,
     });
@@ -95,16 +93,6 @@ export default function Register() {
               setUserInfo({
                 ...userInfo,
                 name: e.target.value,
-              })
-            }
-          />
-          <Input
-            placeholder="Username..."
-            className="mt-5"
-            onChange={(e) =>
-              setUserInfo({
-                ...userInfo,
-                username: e.target.value,
               })
             }
           />

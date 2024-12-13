@@ -35,9 +35,8 @@ export const AuthenticationRouter = (): any => {
 
   authenticationRouter.route("/register").post(async (req: Request, res: Response): Promise<any> => {
     try {
-      const { name, email, password, username } = req.body;
-
-      if (!name || !email || !password || !username) {
+      const { name, email, password } = req.body;
+      if (!name || !email || !password) {
         return res.status(400).send("All fields are required.");
       }
 
@@ -50,8 +49,7 @@ export const AuthenticationRouter = (): any => {
       const newUser: any = new User({
         name,
         password: hashedPassword,
-        username,
-        email,
+        email
       });
 
       await newUser.save();

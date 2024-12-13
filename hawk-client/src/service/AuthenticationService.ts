@@ -1,5 +1,6 @@
 import axios from "axios";
 import { LoginInfo, SendRegisterInfo } from "../type/Authentication";
+import Cookies from 'js-cookie';
 
 const API_URL = "http://localhost:3000/api";
 
@@ -9,8 +10,8 @@ export const LoginUser = async (loginInfo: LoginInfo) => {
     const response = await axios.post(API_URL + "/login", loginInfo);
 
     if (response.status === 200) {
-      localStorage.setItem("token", response.data.token);
-      localStorage.setItem("email", response.data.email);
+      Cookies.set("token", response.data.token, { expires: 1 });
+      Cookies.set("email", response.data.email, { expires: 1 });
       return true;
     } else {
       console.error("Login failed with status:", response.status);
