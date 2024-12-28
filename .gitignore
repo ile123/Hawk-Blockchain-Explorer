@@ -1,0 +1,36 @@
+#---Client---
+# Logs
+hawk-client/package-lock.json
+hawk-client/logs
+hawk-client/*.log
+hawk-client/npm-debug.log*
+hawk-client/yarn-debug.log*
+hawk-client/yarn-error.log*
+hawk-client/pnpm-debug.log*
+hawk-client/lerna-debug.log*
+
+hawk-client/node_modules
+hawk-client/dist
+hawk-client/dist-ssr
+hawk-client/*.local
+
+# Editor directories and files
+hawk-client/.vscode/*
+hawk-client/!.vscode/extensions.json
+hawk-client/.idea
+hawk-client/.DS_Store
+hawk-client/*.suo
+hawk-client/*.ntvs*
+hawk-client/*.njsproj
+hawk-client/*.sln
+hawk-client/*.sw?
+
+#---Server---
+hawk-server/node_modules
+hawk-server/dist/
+hawk-server/package-lock.json
+hawk-server/.env
+
+#---Root---
+node_modules
+package-lock.json
