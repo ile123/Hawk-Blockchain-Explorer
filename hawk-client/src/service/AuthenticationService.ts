@@ -50,27 +50,3 @@ export const RegisterUser = async (registerInfo: SendRegisterInfo) => {
     return false;
   }
 };
-
-export const DoesUserExist = async() => {
-  try {
-    const response = await axios.get(API_URL + "/does-user-exist");
-
-    if (response.status === 200) {
-      return response.data.doesExist;
-    } else {
-      console.error("Registration failed with status:", response.status);
-      console.error(
-        "Error message:",
-        response.data || "No additional information."
-      );
-      return false;
-    }
-  } catch (error) {
-    if (axios.isAxiosError(error)) {
-      console.error("Axios error:", error.response || error.message);
-    } else {
-      console.error("Unexpected error:", error);
-    }
-    return false;
-  }
-}

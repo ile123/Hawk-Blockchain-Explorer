@@ -16,20 +16,12 @@ A blockchain explorer built with the MERN stack (MongoDB, Express.js, React, Nod
      - Display transaction details including sender and receiver(inputs and outputs), amount, transaction status, and the block in which the transaction was included.
      - Users can track transactions by ID and view detailed information like gas fees, value transfers, etc.
 
-### 3. **Wallet Address Lookup**
-   - **Description**: Users can look up wallet addresses to view associated transaction histories and balances.
+### 3. **Address Lookup**
+   - **Description**: Addresses to view associated info related to the address.
    - **Functionality**:
-     - Display balance of the wallet.
-     - View a detailed list of transactions sent and received by the wallet.
+     - Display address info.
 
-### 4. **Network Overview**
-   - **Description**: Provides an overview of the blockchain network, such as the latest block, the number of transactions, and hash rate.
-   - **Functionality**:
-     - Displays the latest block number and block hash.
-     - Show the number of transactions on the blockchain.
-     - Real-time hash rate and network health statistics.
-
-### 5. **Security Features**
+### 4. **Security Features**
    - **Description**: Authentication and authorization system.
    - **Functionality**:
      - Registration and login system.

@@ -1,9 +1,26 @@
 services:
-  #client:
-  #  container_name: hawk-client
-  #server:
-  #  container_name: hawk-server
-  hawk-db:
+  client:
+    container_name: hawk-client
+    build:
+      context: ./hawk-client
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - server
+
+  server:
+    container_name: hawk-server
+    ports:
+      - 5000:5000
+      
+    build:
+      context: ./hawk-server
+      dockerfile: Dockerfile
+    depends_on:
+      - mongo
+
+  mongo:
     image: mongo
     environment:
       MONGO_INITDB_DATABASE: hawk-db

@@ -1,14 +1,13 @@
 import { LoadingOutlined } from "@ant-design/icons";
 import { Button, Card, Input, Row, Col, notification } from "antd";
 import Password from "antd/es/input/Password";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { LoginInfo } from "../../type/Authentication";
-import { DoesUserExist, LoginUser } from "../../service/AuthenticationService";
+import { LoginUser } from "../../service/AuthenticationService";
 
 export default function Login() {
   const navigate = useNavigate();
-  const [userExist, setUserExist] = useState(false);
   const [loading, setLoading] = useState(false);
   const [userInfo, setUserInfo] = useState<LoginInfo>({
     email: "",
@@ -56,15 +55,6 @@ export default function Login() {
     setLoading(false);
   };
 
-  useEffect(() => {
-    const checkUserExistence = async () => {
-      const userExists = await DoesUserExist();
-      setUserExist(userExists);
-    };
-
-    checkUserExistence();
-  }, []);
-
   return (
     <>
       <div className="h-screen flex items-center justify-center">
@@ -106,11 +96,9 @@ export default function Login() {
               </Button>
             </Col>
             <Col>
-            {!userExist &&
               <Link to="/register" className="font-medium">
                 Register here.
               </Link>
-            }
             </Col>
           </Row>
         </Card>

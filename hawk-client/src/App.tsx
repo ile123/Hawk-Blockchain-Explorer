@@ -4,6 +4,10 @@ import Main from './page/main/Main';
 import Login from './page/login/Login';
 import Register from './page/register/Register';
 import NotFound from './page/not-found/NotFound';
+import SearchResult from './page/search-result/SearchResult';
+import SearchResultAddresses from './page/search-result/SearchResultAddresses';
+import SearchResultTransactions from './page/search-result/SearchResultTransactions';
+import SearchResultBlock from './page/search-result/SearchResultBlock';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -11,6 +15,10 @@ const router = createBrowserRouter(
       <Route index element={<Main />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/search/:query" element={<SearchResult />} />
+      <Route path="/address/:query" element={<SearchResultAddresses />} />
+      <Route path="/transaction/:query" element={<SearchResultTransactions />} />
+      <Route path="/block/:query" element={<SearchResultBlock />} />
       <Route path="*" element={<NotFound />} />
     </Route>
   )

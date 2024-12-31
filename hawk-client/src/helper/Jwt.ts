@@ -6,7 +6,8 @@ export const isJwtValid = () => {
     if(!token) return false;
     const decodedJwt = jwtDecode(token);
     if(decodedJwt?.exp && Date.now() >= (decodedJwt.exp * 1000)) {
-        localStorage.removeItem("token");
+        Cookies.remove("token");
+        Cookies.remove("email");
         return false;
     }
     return true;
