@@ -2,7 +2,6 @@ import express, { Request, Response, Router } from "express";
 import { extractEmail, verifyJwt } from "./JWTHandler";
 import { determineQueryType, sendRpcRequest } from "../helper";
 import User from "../models/UserModel";
-import axios from "axios";
 
 export const ExplorerRouter = (): Router => {
   const explorerRouter: Router = express.Router();

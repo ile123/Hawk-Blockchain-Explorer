@@ -1,28 +1,47 @@
+#name: hawk-blockchain-explorer
+
 services:
-  client:
-    container_name: hawk-client
-    build:
-      context: ./hawk-client
-      dockerfile: Dockerfile
-    ports:
-      - "80:80"
-    depends_on:
-      - server
+#  client:
+#    container_name: hawk-client
+#    build:
+#      context: ./hawk-client
+#      dockerfile: Dockerfile
+#    ports:
+#      - "80:80"
+#    networks:
+#      - hawk-blockchain-explorer
+#    volumes:
+#      - ./hawk-client:/app
+#      - /app/node_modules
+#    depends_on:
+#      - server
 
-  server:
-    container_name: hawk-server
-    ports:
-      - 5000:5000
-      
-    build:
-      context: ./hawk-server
-      dockerfile: Dockerfile
-    depends_on:
-      - mongo
+#  server:
+#    container_name: hawk-server
+#    build:
+#      context: ./hawk-server
+#      dockerfile: Dockerfile
+#    ports:
+#      - 5000:5000
+#    networks:
+#      - hawk-blockchain-explorer
+#    volumes:
+#      - ./hawk-server:/app
+#      - /app/node_modules
+#    depends_on:
+#      - mongo
 
-  mongo:
+  hawk-db:
     image: mongo
     environment:
       MONGO_INITDB_DATABASE: hawk-db
     ports:
       - 27017:27017
+    #volumes:
+    #  - mongo_data:/data/db
+
+#volumes:
+#  mongo_data:
+#networks:
+#  hawk-blockchain-explorer:
+#    driver: bridge

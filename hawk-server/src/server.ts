@@ -12,10 +12,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-//const localhostUri: string = "mongodb://localhost:27017/hawk-db";
-const dockerUri: string = 'mongodb://mongo:27017/hawk-db';
+const localhostUri: string = "mongodb://localhost:27017/hawk-db";
+//const dockerUri: string = 'mongodb://mongo:27017/hawk-db';
 
-connectToDatabase(dockerUri);
+connectToDatabase(localhostUri);
 
 app.get("/health", (_req: Request, res: Response) => {
   res.status(200).send("Server is running");
